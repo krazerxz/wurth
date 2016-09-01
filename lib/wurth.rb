@@ -9,7 +9,7 @@ class Wurth < Thor
   end
 
   desc "account", "account manipulation [create delete rename list]"
-  def account action, name
+  def account _action, name
     Account.create name: name
     puts "Created account #{name}"
   end

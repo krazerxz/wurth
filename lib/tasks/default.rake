@@ -1,1 +1,1 @@
-task :default => [:rspec, :ok]
+task default: [:rspec, :ok]

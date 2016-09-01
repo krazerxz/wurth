@@ -1,8 +1,8 @@
-ENV['RACK_ENV'] = 'test'
+ENV["RACK_ENV"] = "test"
 
-require 'active_record'
+require "active_record"
 require "byebug"
-require 'database_cleaner'
+require "database_cleaner"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

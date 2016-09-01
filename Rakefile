@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] ||= 'test'
+ENV["RACK_ENV"] ||= "test"
 
-require 'standalone_migrations'
+require "standalone_migrations"
 StandaloneMigrations::Tasks.load_tasks

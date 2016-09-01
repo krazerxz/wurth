@@ -1,6 +1,6 @@
 require_relative "../../lib/wurth"
 
-describe Wurth do
+describe WurthCLI::Wurth do
   subject { described_class.new }
 
   describe "account" do

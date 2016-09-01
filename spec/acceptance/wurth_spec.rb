@@ -5,7 +5,7 @@ describe Wurth do
 
   describe "create" do
     it "creates an account" do
-      subject.create "account", "account_1"
+      subject.account "create", "account_1"
       expect(Account.count).to eq 1
       expect(Account.first.name).to eq "account_1"
     end

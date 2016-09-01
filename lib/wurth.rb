@@ -8,8 +8,8 @@ class Wurth < Thor
     puts "Wurth initialized"
   end
 
-  desc "create", "Create a new thing"
-  def create type, name
+  desc "account", "account manipulation [create delete rename list]"
+  def account action, name
     Account.create name: name
     puts "Created account #{name}"
   end

@@ -5,5 +5,5 @@ task :ok do
   purple = "\e[35m"
   bold   = "\e[1m"
   normal = "\e[0m"
-  puts "", "#{bold}*#{yellow}*#{green}*#{blue}*#{purple}* #{green} ALL TESTS PASSED #{purple}*#{blue}*#{green}*#{yellow}*#{normal}"
+  puts "#{bold}*#{yellow}*#{green}*#{blue}*#{purple}* #{green} ALL TESTS PASSED #{purple}*#{blue}*#{green}*#{yellow}*#{normal}"
 end

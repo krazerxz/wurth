@@ -9,8 +9,13 @@ class Wurth < Thor
   end
 
   desc "account", "account manipulation [create delete rename list]"
-  def account _action, name
-    Account.create name: name
-    puts "Created account #{name}"
+  def account action, name
+    if action == "create"
+      Account.create name: name
+      puts "Created account #{name}"
+    elsif action == "delete"
+      Account.find_by(name: name).delete
+      puts "Deleted account #{name}"
+    end
   end
 end

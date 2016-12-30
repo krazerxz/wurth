@@ -2,4 +2,4 @@
 
 require_relative "../lib/wurth"
 
-Wurth.start(ARGV)
+WurthCLI::Wurth.start(ARGV)

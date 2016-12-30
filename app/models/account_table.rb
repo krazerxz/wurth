@@ -6,7 +6,7 @@ class AccountTable
   def to_table
     rows = []
     rows << Account.attribute_names
-    @accounts.all.each do |account|
+    @accounts.all.find_each do |account|
       rows << account.attributes.values
     end
     Terminal::Table.new rows: rows

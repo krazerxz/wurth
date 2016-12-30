@@ -30,6 +30,11 @@ module WurthCLI
     def debit account_name, value
       Bank.debit name: account_name, value: value
     end
+
+    desc "wealth", "shows the net value held across all accounts"
+    def wealth
+      puts Bank.wealth
+    end
   end
 end
 

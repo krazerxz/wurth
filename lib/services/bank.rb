@@ -13,7 +13,6 @@ class Bank
     puts "#{account.name} debited #{value}. New balance is #{account.balance}"
   end
 
-
   def self.create name:, balance: 0
     Account.create name: name, balance: balance
     puts "Created account #{name}"
@@ -22,5 +21,9 @@ class Bank
   def self.delete name:
     Account.find_by(name: name).delete
     puts "Deleted account #{name}"
+  end
+
+  def self.wealth
+    Account.all.map(&:balance).inject(&:+)
   end
 end

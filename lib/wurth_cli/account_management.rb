@@ -1,19 +1,18 @@
 require_relative "../models/account"
 require_relative "../models/account_table"
+require_relative "../services/bank"
 
 module WurthCLI
   class AccountManagement < Thor
 
     desc "create <name>", "Create an account denoted by <name>"
     def create name
-      Account.create name: name, balance: 0
-      puts "Created account #{name}"
+      Bank.create name: name
     end
 
     desc "delete <name>", "Delete the account denoted by <name>"
     def delete name
-      Account.find_by(name: name).delete
-      puts "Deleted account #{name}"
+      Bank.delete name: name
     end
 
     desc "list", "Lists all accounts and their respective balance"
@@ -24,18 +23,12 @@ module WurthCLI
 
     desc "credit <account> <ammount>", "credits the given account with the given ammount"
     def credit account_name, value
-      account = Account.find_by name: account_name
-      account.balance -= value.to_f
-      account.save
-      puts "#{account.name} credited #{value}. New balance is #{account.balance}"
+      Bank.credit name: account_name, value: value
     end
 
     desc "debit <account> <ammount>", "debits the given account with the given ammount"
     def debit account_name, value
-      account = Account.find_by name: account_name
-      account.balance += value.to_f
-      account.save
-      puts "#{account.name} debited #{value}. New balance is #{account.balance}"
+      Bank.debit name: account_name, value: value
     end
   end
 end

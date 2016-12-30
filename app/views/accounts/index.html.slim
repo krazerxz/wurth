@@ -1,0 +1,14 @@
+h1 Accounts
+.row
+  .col-md-12
+    table.table
+      thead
+        th Account
+        th Balance
+      tbody
+        - @accounts.each do |account|
+          tr
+            td
+              = account.name
+            td
+              = account.balance

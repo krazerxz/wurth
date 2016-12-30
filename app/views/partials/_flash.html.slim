@@ -1,0 +1,7 @@
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+- else
+  - flash.each do |type, message|
+    div class="alert alert-#{bootstrap_class_for_flash(type)}" role=type
+      = message

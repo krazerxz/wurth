@@ -1,5 +1,3 @@
-require 'terminal-table'
-
 class AccountTable
   def initialize accounts
     @accounts = accounts

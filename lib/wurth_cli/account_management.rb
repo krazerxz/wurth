@@ -1,7 +1,3 @@
-require_relative "../models/account"
-require_relative "../models/account_table"
-require_relative "../services/bank"
-
 module WurthCLI
   class AccountManagement < Thor
 

@@ -1,9 +1,3 @@
-require "thor"
-require_relative "../initializers/activerecord"
-require_relative "models/account"
-require_relative "wurth_cli/account_management"
-
-
 module WurthCLI
   class Wurth < Thor
     desc "init", "Initialize Wurth"

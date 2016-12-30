@@ -1,10 +1,5 @@
-require_relative "../models/account"
-require_relative "../models/account_table"
-require_relative "../services/bank"
-
 module WurthCLI
   class AccountManagement < Thor
-
     desc "create <name>", "Create an account denoted by <name>"
     def create name
       Bank.create name: name
@@ -18,7 +13,7 @@ module WurthCLI
     desc "list", "Lists all accounts and their respective balance"
     def list
       accounts = Account.all
-      puts AccountTable.new(accounts).to_table
+      Rails.logger.info AccountTable.new(accounts).to_table
     end
 
     desc "credit <account> <ammount>", "credits the given account with the given ammount"
@@ -33,8 +28,7 @@ module WurthCLI
 
     desc "wealth", "shows the net value held across all accounts"
     def wealth
-      puts Bank.wealth
+      Rails.logger.info Bank.wealth
     end
   end
 end
-

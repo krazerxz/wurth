@@ -1,14 +1,22 @@
 source "https://rubygems.org"
 
 gem "activerecord"
-gem "standalone_migrations"
-gem "sqlite3"
-gem 'terminal-table'
+gem "jbuilder"
+gem "pg"
+gem "rails"
+gem "terminal-table"
 gem "thor"
 
-group :test do
+group :development, :test do
+  gem "byebug", platform: :mri
   gem "database_cleaner"
-  gem "byebug"
-  gem "rspec"
+  gem "rspec-rails"
   gem "rubocop"
 end
+
+group :development do
+  gem "listen", "~> 3.0.5"
+  gem "web-console"
+end
+
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

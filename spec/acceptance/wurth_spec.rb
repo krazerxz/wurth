@@ -1,4 +1,4 @@
-require_relative "../../lib/wurth"
+require "rails_helper"
 
 describe WurthCLI::Wurth do
   subject { described_class.new }

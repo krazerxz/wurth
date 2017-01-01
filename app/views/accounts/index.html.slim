@@ -11,4 +11,9 @@ h1 Accounts
             td
               = account.name
             td
-              = account.balance
+              = number_to_currency account.balance, unit: "£"
+        tr
+          td
+          td
+            b
+              = number_to_currency @total_balance, unit: "£"

@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    @account_facade = AccountFacade.new Account.all
+    @account_facade = AccountFacade.new Account.all.sort
   end
 
   def edit

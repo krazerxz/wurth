@@ -1,4 +1,7 @@
 .row
+  .col-md-12
+    = line_chart @account_facade.accounts_graph_data, @account_facade.accounts_graph_options
+.row
   .col-md-2
     h1 Accounts
   .col-md-2.col-md-offset-8
@@ -11,7 +14,7 @@
         th Balance
         th Operations
       tbody
-        - @accounts.each do |account|
+        - @account_facade.accounts.each do |account|
           tr
             td
               = account.name
@@ -23,7 +26,7 @@
                 data: { confirm: "Are you sure you want to delete account #{account.name}?" }
         tr
           td
-          td
-            b
-              = number_to_currency @total_balance, unit: "£"
+            td
+              b
+                = number_to_currency @account_facade.total_balance, unit: "£"
           td

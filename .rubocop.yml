@@ -3,6 +3,7 @@ Rails:
 AllCops:
   Exclude:
     - bin/*
+    - config/initializers/simple_form_bootstrap.rb
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 Documentation:

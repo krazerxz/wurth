@@ -1,7 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    @accounts = Account.all
-    @total_balance = @accounts.map(&:balance).inject(&:+)
+    @account_facade = AccountFacade.new Account.all
   end
 
   def destroy

@@ -1,0 +1,11 @@
+.row
+  .col-md-4
+    h1 New Account
+.row
+  = simple_form_for @account, html: { class: 'form-inline' } do |form|
+    .col-md-4
+      = form.input :name, required: true
+    .col-md-4
+      = form.input :balance, required: true, lable: "Opening Balance"
+    .col-md-4
+      = form.submit "Submit", class: "btn btn-success"

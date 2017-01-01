@@ -1,0 +1,15 @@
+.row
+  .col-md-12
+    h1 
+      = "Adjust balance for #{@account.name}"
+
+.row
+  p
+    = "Current balance: £#{@account.balance}"
+
+.row
+  = simple_form_for @account, html: { class: 'form-inline' } do |form|
+    .col-md-4
+      = form.input :balance, required: true, lable: "New balance"
+    .col-md-4
+      = form.submit "Submit", class: "btn btn-success"

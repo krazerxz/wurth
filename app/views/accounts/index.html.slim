@@ -1,10 +1,15 @@
-h1 Accounts
+.row
+  .col-md-2
+    h1 Accounts
+  .col-md-2.col-md-offset-8
+    = link_to "New Account", new_account_path, class: "btn btn-success"
 .row
   .col-md-12
     table.table
       thead
         th Account
         th Balance
+        th Operations
       tbody
         - @accounts.each do |account|
           tr
@@ -12,8 +17,13 @@ h1 Accounts
               = account.name
             td
               = number_to_currency account.balance, unit: "£"
+            td
+              = link_to "Adjust Balance", edit_account_path(account), class: "btn btn-primary"
+              = link_to "Delete Account", account_path(account), method: :delete, class: "btn btn-danger",
+                data: { confirm: "Are you sure you want to delete account #{account.name}?" }
         tr
           td
           td
             b
               = number_to_currency @total_balance, unit: "£"
+          td

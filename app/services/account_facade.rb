@@ -35,7 +35,7 @@ class AccountFacade
     end
   end
 
-  def colour_for name
-    ColorGenerator.new(saturation: 0.3, value: 1.0, seed: name).create_hex
+  def colour_for number
+    ColorGenerator.new(saturation: 0.3, value: 1.0, seed: number).create_hex
   end
 end

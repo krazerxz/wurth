@@ -15,11 +15,15 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.new account_params
+    @account = Account.new account_params.merge(seed)
     @account.save ? redirect_to(accounts_path) : render(:new)
   end
 
   private
+
+  def seed
+    { seed: SecureRandom.random_number(1_000) }
+  end
 
   def account_params
     params.require(:account).permit(:name, :balance)
